@@ -1,0 +1,32 @@
+.bars {
+    background-color: #336941;
+    width: 290px;
+    height: 400px;
+    margin-left: 50px;
+    position: absolute;
+    top: 80px;
+    display: none;
+}
+
+.barsItem {
+    color: #1c2031;
+    cursor: pointer;
+    font-style: oblique;
+    font-size: xx-large;
+    line-height: 2;
+
+    &:hover{
+        scale: 1.1;
+        transition: .6s;
+        border-bottom: 1px solid #1c2031;
+    }
+}
+
+.showBars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+}
