@@ -17,7 +17,9 @@ function getCartById(carts) {
             .then((cartInfo) => {
                 return shopBasket.push(cartInfo)
             })
-          
+            .then(() => basketCounter.innerHTML = shopBasket.length
+            )
+
             .catch()
     })
 }
@@ -25,41 +27,44 @@ function getCartById(carts) {
 
 
 
-function showCartInBasket(shopBasket){
-     let tem3 = shopBasket.map((cart) => {
+function showCartInBasket() {
+    let tem3 = shopBasket.map((cart) => {
         const { image, title, description, price, id, category } = cart;
-        return  `
-        <a href="#" onclick="showProduct(\`${id}\`)">
-         <div class="secondHomeCards__card">
-            <div class="secondHomeCards__card--img"><img class="secondHomeCards__card--img--inner" src="${image}" alt=""></div>
-            <h1 class="secondHomeCards__card--title">${title}</h1>
-            <h2 class="secondHomeCards__card--price">${price}$</h2>
-        </div>
-    </a>`
-
-     })
-        
+        return `
+        <div class="basket">
+        <div class="basket__img"><img class="basket__img--inner" src="${image}" alt=""></div>
+        <div class="basket__info">
+           <h1 class="basket__info--title">${title}</h1>
+           <h2 class="basket__info--price">${price}$</h2>
+       </div>
+       <button class="basket__btn" onclick="showProduct(\`${id}\`)">show details</button>
+       <button class="basket__btn" onclick="removeProduct(\`${id}\`)">remove</button>
+   </div>`
+    })
     root.innerHTML = tem3.join("");
 
+    root.classList.remove("rootDisplay");
     firstHomeCards__btn.classList.add("firstHomeCards__btnDisplay");
     secondHomeCards.classList.add("secondHomeCardsDisplay");
     secondSlide.classList.add("secondSlideDisplay");
     slide.classList.add("slideDisplay");
 }
 
-shoppingIcon.addEventListener("click", getAllCarts)
-shoppingIcon.addEventListener("click" , showCartInBasket)
+window.addEventListener("load", getAllCarts)
+shoppingIcon.addEventListener("click", showCartInBasket)
 
 
 // when click addButtom
 
-function addToShoppingBasket(id){
+function addToShoppingBasket(id) {
     fetch(`https://fakestoreapi.com/products/${id}`)
-    .then(res => res.json())
-    .then((addedCart) => {
-        return shopBasket.push(addedCart)
-    })
-    .catch()
+        .then(res => res.json())
+        .then((addedCart) => {
+            return shopBasket.push(addedCart)
+        })
+        .then(() => basketCounter.innerHTML = shopBasket.length
+        )
+        .catch()
 }
 
 console.log(shopBasket);

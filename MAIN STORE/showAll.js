@@ -20,6 +20,7 @@ function showAllProducts(products) {
         </div>
     </a>`
     })
+    root.classList.remove("rootDisplay");
     root.innerHTML = tem3.join("");
 
 

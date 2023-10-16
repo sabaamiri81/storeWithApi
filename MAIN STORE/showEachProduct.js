@@ -1,12 +1,12 @@
 
 
-function showProduct(Id){
+function showProduct(Id) {
     fetch(`https://fakestoreapi.com/products/${Id}`)
-    .then(res => res.json())
-    .then((selectedCart) => {
-        return showEachCart(selectedCart)
-    })
-    .catch()
+        .then(res => res.json())
+        .then((selectedCart) => {
+            return showEachCart(selectedCart)
+        })
+        .catch()
 
 }
 
@@ -21,7 +21,7 @@ function showEachCart(selectedCart) {
         <button class="selected__data--btn" onclick="addToShoppingBasket(${selectedCart.id})">buy now</button>
     </div>
 </div>`
-    
+    root.classList.remove("rootDisplay");
     root.innerHTML = tem;
 
     firstHomeCards__btn.classList.add("firstHomeCards__btnDisplay");

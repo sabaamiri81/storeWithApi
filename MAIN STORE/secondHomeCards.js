@@ -9,7 +9,7 @@ fetch('https://fakestoreapi.com/products')
 
 
 function findFourCards(secondGroup) {
-    let findFourCards = secondGroup.filter(item => 5<= item.id &&  item.id<= 8)
+    let findFourCards = secondGroup.filter(item => 5 <= item.id && item.id <= 8)
     showSecondHomeCards(findFourCards);
 }
 
