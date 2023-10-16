@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .header {
         height: 100px;
         background-color: #1c2031;
@@ -8,11 +8,12 @@
     
         &__title{
             color: #e9eaee;
-            margin-left: 290px;
-            margin-right: 600px;
+            margin-left: 30px;
+            font-size: x-large;
         }
     
         &__search {
+            display: none;
             background-color: transparent;
             border-bottom: 2px solid #e9eaee;
             height: 40px;
@@ -42,12 +43,12 @@
     
         &__shoppingIcon {
             color: #e9eaee;
-            font-size: xx-large;
+            font-size: x-large;
             margin-left: 20px;
     
             &--number{
-                width: 25px;
-                height: 25px;
+                width: 20px;
+                height: 20px;
                 border-radius: 50%;
                 background-color: red;
                 color: white;
@@ -59,21 +60,21 @@
     
         &__userIcon {
             color: #e9eaee;
-            font-size: xx-large;
-            margin-left: 80px;
+            font-size: x-large;
+            margin-left: 20px;
         }
     
         &__homeIcon {
             color: #e9eaee;
-            font-size: xx-large;
-            margin-left: 80px;
-            margin-right: 60px;
+            font-size: x-large;
+            margin-left: 60px;
+            // margin-right: 60px;
         }
     
         &__barsIcon {
             color: #e9eaee;
-            font-size: xx-large;
-            margin-left: 50px;
+            font-size: x-large;
+            margin-left: 30px;
         }
     
     }

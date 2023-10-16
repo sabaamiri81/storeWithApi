@@ -1,3 +1,6 @@
+@media (min-width: 768px){
+
+
 .root{
     margin: auto;
     margin-top: 50px;
@@ -8,6 +11,11 @@
     justify-content: start;
     align-items: center;
 }
+
+.rootDisplay {
+    display: none;
+}
+
 
 .firstHomeCards {
     margin: auto;
@@ -132,3 +140,4 @@
     display: none;
 }
 
+}
