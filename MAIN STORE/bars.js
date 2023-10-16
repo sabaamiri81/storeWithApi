@@ -32,4 +32,4 @@ function findCategory(category) {
 }
 
 
-barsIcon.addEventListener("click" , showBars)
+barsIcon.addEventListener("click", showBars)
